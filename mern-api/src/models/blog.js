@@ -10,6 +10,9 @@ const BlogPost = new Schema({
         type: String,
         required: true
     },
+    image: {
+        type: String,
+    },
     author: {
         type: Object,
         required: true,
