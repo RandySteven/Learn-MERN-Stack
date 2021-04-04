@@ -16,4 +16,5 @@ router.get('/post/:postId', blogController.getBlogPostById);
 router.put('/post/:postId', [
     body('title').isLength({min:5}).withMessage('Input title minimum 5'), 
     body('body').isLength({min:5}).withMessage('Input body minimum 5')], blogController.updateBlogPost);
+router.delete('/post/:postId', blogController.deleteBlogPost)
 module.exports = router

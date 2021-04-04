@@ -50,7 +50,10 @@ app.use((error, req, res, next) => {
     res.status(status).json({message: message, data:data})
 });
 
-mongoose.connect('mongodb+srv://randy:XTWUgb0hRDN4SeCJ@cluster0.e7jo4.mongodb.net/Blog?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://randy:XTWUgb0hRDN4SeCJ@cluster0.e7jo4.mongodb.net/Blog?retryWrites=true&w=majority', {
+    useUnifiedTopology:true,
+    useNewUrlParser: true
+})
     .then(()=>{
         app.listen(4000, console.log('http://localhost:4000'));
     })
